@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './static/style/style.scss'
-import App from './components/App';
+import PageNews from "./components/PageNews";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<PageNews/>, document.getElementById('root'));

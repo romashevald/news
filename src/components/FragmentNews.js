@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {list} from "../data/list";
 
 export const FragmentNews = ({data}) => {
     return (
@@ -8,7 +7,7 @@ export const FragmentNews = ({data}) => {
                 const {id, title, caption, date, views, img, link} = item;
                 return (
                     <div className='example__item' key={i}>
-                        <div>{id}</div>
+                        <div>{`id: ${id}`}</div>
                         <div>{title}</div>
                         <div>{caption}</div>
                         <div>{date}</div>

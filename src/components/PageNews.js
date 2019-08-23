@@ -3,6 +3,8 @@ import {IconLogo} from "./Icon";
 import {FragmentNews} from "./FragmentNews";
 import {list} from "../data/list";
 import Pagination from "./Pagination";
+import {Header} from "./Header";
+import {SORT_BY} from "../constants";
 
 class PageNews extends Component {
     constructor(props) {
@@ -12,14 +14,14 @@ class PageNews extends Component {
             currentPage: null,
             pageCount: null,
             pageSize: 3,
-            startingPage: 1
+            startingPage: 1,
+            sortBy: SORT_BY.ALPH
         };
+        this._handleChange = this._handleChange.bind(this);
     }
 
     componentDidMount() {
-        const startingPage = this.state.startingPage
-            ? this.state.startingPage
-            : 1;
+        const startingPage = this.state.startingPage ? this.state.startingPage : 1;
         const data = this.state.data;
         const pageSize = this.state.pageSize;
         let pageCount = parseInt(data.length / pageSize);
@@ -33,22 +35,30 @@ class PageNews extends Component {
     }
 
     render() {
-        const {data, currentPage, pageCount} = this.state;
+        const {data, currentPage, pageCount, sortBy} = this.state;
         return (
             <div>
+                <Header handleChange={this._handleChange} sortBy={sortBy}/>
                 <div className='pagination-results'>
-                    <FragmentNews data={this.createPaginatedData()}/>
+                    <FragmentNews data={this._createPaginatedData()}/>
                 </div>
                 <div className='pagination'>
                     <div className='pagination-controls'>
-                        {this.createControls()}
+                        {this._createControls()}
                     </div>
                 </div>
             </div>
         );
     }
 
-    createPaginatedData() {
+    _handleChange(e) {
+        const el = e.target;
+        const {name, value} = el;
+        this.setState({[name]: value});
+
+    };
+
+    _createPaginatedData() {
         const data = this.state.data;
         const pageSize = this.state.pageSize;
         const currentPage = this.state.currentPage;
@@ -56,11 +66,11 @@ class PageNews extends Component {
         return data.slice((upperLimit - pageSize), upperLimit);
     }
 
-    setCurrentPage(num) {
+    _setCurrentPage(num) {
         this.setState({currentPage: num});
     }
 
-    createControls() {
+    _createControls() {
         let controls = [];
         const pageCount = this.state.pageCount;
         for (let i = 1; i <= pageCount; i++) {
@@ -68,7 +78,7 @@ class PageNews extends Component {
             const activeClassName = i === this.state.currentPage ? `${baseClassName}--active` : '';
             controls.push(
                 <div className={`${baseClassName} ${activeClassName}`} key={i}
-                     onClick={() => this.setCurrentPage(i)}>
+                     onClick={() => this._setCurrentPage(i)}>
                     {i}
                 </div>
             );

@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {list} from "../data/list";
 
-export const FragmentNews = () => {
+export const FragmentNews = ({data}) => {
     return (
-        <div>
-            {list.map((news, i) => {
-                const {id, title, caption, date, views, img, link} = news;
+        <div className='example'>
+            {data.map((item, i) => {
+                const {id, title, caption, date, views, img, link} = item;
                 return (
-                    <div key={i}>
+                    <div className='example__item' key={i}>
                         <div>{id}</div>
                         <div>{title}</div>
                         <div>{caption}</div>
@@ -18,6 +18,6 @@ export const FragmentNews = () => {
                     </div>
                 );
             })}
-        </div>
-    );
+        </div>);
+
 };

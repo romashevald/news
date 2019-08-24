@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {FragmentNews} from "./FragmentNews";
+import {FragmentsNews} from "./FragmentsNews";
 import {Header} from "./Header";
 import {SORT_BY, STANDART_PAGE_SIZE, STANDART_START_PAGE} from "../constants";
-import {getNews} from "../news-service";
+import {getNews} from "../utils/news-service";
 import {calcPageCount} from "../utils";
 import {IconPreloader} from "./Icon";
 
@@ -33,19 +33,51 @@ class PageNews extends Component {
     render() {
         const {data, sortBy, isLoading} = this.state;
         return (
-            <div>
-                <Header handleChange={this._handleChange}
-                        sortBy={sortBy}/>
-                <div className='pagination-results'>
-                    <FragmentNews data={data}/>
+            <body className='page-news'>
+            {/*HEADER*/}
+
+            {/*<Header handleChange={this._handleChange}*/}
+            {/*sortBy={sortBy}/>*/}
+            <header>
+                <div className='page-header'>
+                    <div className='title-news'><h3>News</h3></div>
+                    <div>
+                        <select onChange={this._handleChange}
+                                name='sortBy'
+                                value={sortBy}>
+                            <option value={SORT_BY.LEXICAL}>{SORT_BY.LEXICAL}</option>
+                            <option value={SORT_BY.DATE}>{SORT_BY.DATE}</option>
+                        </select>
+                    </div>
                 </div>
-                <div className='pagination'>
+            </header>
+
+            {/*FragmentNews*/}
+            <div className='body'>
+
+                <section className='content'>
+                    <FragmentsNews data={data}/>
+
                     <div className='pagination-controls'>
                         {this._createControls()}
                     </div>
-                </div>
-                {isLoading ? <IconPreloader/> : null}
+                </section>
+
+                <div className="sidebar-1 sidebar"/>
+                <div className="sidebar-2 sidebar"/>
             </div>
+
+            {/*PRELOADER*/}
+            {/*{isLoading ? <IconPreloader/> : null}*/}
+            {/*<div className="box">*/}
+            {/*<div className="cat">*/}
+            {/*<div className="cat__body"></div>*/}
+            {/*<div className="cat__body"></div>*/}
+            {/*<div className="cat__tail"></div>*/}
+            {/*<div className="cat__head"></div>*/}
+            {/*</div>*/}
+            {/*</div>*/}
+            </body>
         );
     }
 
@@ -69,7 +101,7 @@ class PageNews extends Component {
         let controls = [];
         const pageCount = this._pageCount;
         for (let i = 1; i <= pageCount; i++) {
-            const baseClassName = 'pagination-controls__button';
+            const baseClassName = 'pagination-controls-button';
             const activeClassName = i === this.state.currentPageNumber ? `${baseClassName}--active` : '';
             controls.push(
                 <div className={`${baseClassName} ${activeClassName}`}

@@ -9,3 +9,5 @@ export const calcPageCount = (pageSize = STANDART_PAGE_SIZE) => {
     }
     return pageCount;
 };
+
+export const timestampToData = ts => new Date(+ts).toLocaleDateString();

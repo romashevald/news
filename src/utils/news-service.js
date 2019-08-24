@@ -1,8 +1,9 @@
-import {news} from "./data/news";
-import {SORT_BY, STANDART_PAGE_SIZE, STANDART_START_PAGE, TIMEOUT} from "./constants";
+import {news} from "../data/news";
+import {SORT_BY, STANDART_PAGE_SIZE, STANDART_START_PAGE, TIMEOUT} from "../constants/index";
+import {timestampToData} from "./index";
 
 export const getNews = async (pageNumber = STANDART_START_PAGE
-                              , sortType = SORT_BY.LEXICAL, limit = STANDART_PAGE_SIZE) => {
+    , sortType = SORT_BY.LEXICAL, limit = STANDART_PAGE_SIZE) => {
     await sleep(TIMEOUT);
     const sortedNews = sortNews(news, sortType);
     return getNewsPage(sortedNews, pageNumber, limit);
@@ -17,7 +18,7 @@ const sortNews = (news, sortType) => {
         case SORT_BY.LEXICAL:
             return news.sort((a, b) => a.title.localeCompare(b.title));
         case SORT_BY.DATE:
-            return news.sort((a, b) => Number(a.date) < Number(b.date));
+        return news.sort((a, b) => Number(a.date) - Number(b.date));
         default:
             return news;
     }

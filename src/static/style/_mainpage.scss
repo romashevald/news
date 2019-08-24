@@ -1,0 +1,59 @@
+$black: #000 !default;
+$gray-dark: #373a3c !default;
+$gray: #55595c !default;
+$gray-light: #818a91 !default;
+$gray-lighter: #eceeef !default;
+$gray-lightest: #f7f7f9 !default;
+
+.page-news header,
+.sidebar,
+.content {
+  padding: 1rem;
+}
+
+.page-news header {
+  background: none;
+}
+
+.sidebar {
+  background: none;
+}
+
+.content {
+  color: $black;
+}
+
+/**
+ * Flex things:
+ * — Mobile first
+ * — Responsive
+ */
+.page-news {
+  min-height: 100vh;
+}
+
+.page-news,
+.body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 1 auto;
+}
+
+@media (min-width: 768px) {
+  .sidebar-1 {
+    order: -1;
+  }
+  .body {
+    flex-direction: row;
+  }
+  .sidebar {
+    flex: 0 0 200px;
+  }
+}
+
+
+

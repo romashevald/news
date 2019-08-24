@@ -32,4 +32,12 @@ export const IconViews = ({className}) => {
     />;
 };
 
-export const IconPreloader = () => 123;
+export const IconPreloader = () =>
+    <div className="box">
+        <div className="cat">
+            <div className="cat__body"></div>
+            <div className="cat__body"></div>
+            <div className="cat__tail"></div>
+            <div className="cat__head"></div>
+        </div>
+    </div>;

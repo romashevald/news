@@ -33,50 +33,29 @@ class PageNews extends Component {
     render() {
         const {data, sortBy, isLoading} = this.state;
         return (
-            <body className='page-news'>
-            {/*HEADER*/}
+            <body className='page-news' style={{position: 'relative'}}>
 
-            {/*<Header handleChange={this._handleChange}*/}
-            {/*sortBy={sortBy}/>*/}
-            <header>
-                <div className='page-header'>
-                    <div className='title-news'><h3>News</h3></div>
-                    <div>
-                        <select onChange={this._handleChange}
-                                name='sortBy'
-                                value={sortBy}>
-                            <option value={SORT_BY.LEXICAL}>{SORT_BY.LEXICAL}</option>
-                            <option value={SORT_BY.DATE}>{SORT_BY.DATE}</option>
-                        </select>
-                    </div>
-                </div>
-            </header>
-
+            <Header handleChange={this._handleChange}
+                    sortBy={sortBy}/>
             {/*FragmentNews*/}
             <div className='body'>
-
                 <section className='content'>
-                    <FragmentsNews data={data}/>
 
+                    <FragmentsNews data={data}/>
+                    {/*PAGINATION*/}
                     <div className='pagination-controls'>
                         {this._createControls()}
                     </div>
                 </section>
-
                 <div className="sidebar-1 sidebar"/>
                 <div className="sidebar-2 sidebar"/>
             </div>
 
-            {/*PRELOADER*/}
             {/*{isLoading ? <IconPreloader/> : null}*/}
-            {/*<div className="box">*/}
-            {/*<div className="cat">*/}
-            {/*<div className="cat__body"></div>*/}
-            {/*<div className="cat__body"></div>*/}
-            {/*<div className="cat__tail"></div>*/}
-            {/*<div className="cat__head"></div>*/}
-            {/*</div>*/}
-            {/*</div>*/}
+            <div>
+
+            </div>
+            <IconPreloader />
             </body>
         );
     }

@@ -1,9 +1,17 @@
 @mixin fill-full($dir: 'full', $type: absolute) {
   position: $type;
-  @if $dir != 'bottom' {top: 0; }
-  @if $dir != 'right' {left: 0; }
-  @if $dir != 'left' {right: 0; }
-  @if $dir != 'top' {bottom: 0; }
+  @if $dir != 'bottom' {
+    top: 0;
+  }
+  @if $dir != 'right' {
+    left: 0;
+  }
+  @if $dir != 'left' {
+    right: 0;
+  }
+  @if $dir != 'top' {
+    bottom: 0;
+  }
 }
 
 .cat {
@@ -19,8 +27,12 @@
     padding-bottom: 100%;
   }
 
-  &:hover > * { animation-play-state: paused; }
-  &:active > * { animation-play-state: running; }
+  &:hover > * {
+    animation-play-state: paused;
+  }
+  &:active > * {
+    animation-play-state: running;
+  }
 }
 
 %cat-img {
@@ -33,7 +45,8 @@
     width: 50%;
     height: 50%;
     background-size: 200%;
-    background: url('https://images.weserv.nl/?url=i.imgur.com/M1raXX3.png&il') no-repeat;
+    background-repeat: no-repeat;
+    background-image: url('https://images.weserv.nl/?url=i.imgur.com/M1raXX3.png&il');
   }
 }
 
@@ -79,8 +92,12 @@
 }
 
 @keyframes rotating {
-  from { transform: rotate(720deg); }
-  to { transform: none; }
+  from {
+    transform: rotate(720deg);
+  }
+  to {
+    transform: none;
+  }
 }
 
 .box {
@@ -89,9 +106,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #e6dcdc;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 
+// reset
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 
 

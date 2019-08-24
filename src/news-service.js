@@ -1,11 +1,11 @@
 import {news} from "./data/news";
-import {SORT_BY, STANDART_START_PAGE, TIMEOUT} from "./constants";
+import {SORT_BY, STANDART_PAGE_SIZE, STANDART_START_PAGE, TIMEOUT} from "./constants";
 
-
-export const getNews = (pageNumber, sortType, limit = STANDART_START_PAGE) => {
-    // let x = await
-    // sleep(TIMEOUT);
-
+export const getNews = async (pageNumber = STANDART_START_PAGE
+                              , sortType = SORT_BY.LEXICAL, limit = STANDART_PAGE_SIZE) => {
+    console.log('===start sleep');
+    await sleep(TIMEOUT);
+    console.log('===finish sleep');
     const sortedNews = sortNews(news, sortType);
     return getNewsPage(sortedNews, pageNumber, limit);
 };
@@ -35,4 +35,4 @@ const getNewsPage = (news, pageNumber, limit) => {
     return news.slice(((pageNumber - 1) * limit), pageNumber * limit);
 };
 
-const sleep = (timeout) => new Promise((resolve, reject) => setTimeout(resolve, timeout));
+const sleep = (timeout) => new Promise((resolve) => setTimeout(resolve, timeout));

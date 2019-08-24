@@ -3,9 +3,7 @@ import {SORT_BY, STANDART_PAGE_SIZE, STANDART_START_PAGE, TIMEOUT} from "./const
 
 export const getNews = async (pageNumber = STANDART_START_PAGE
                               , sortType = SORT_BY.LEXICAL, limit = STANDART_PAGE_SIZE) => {
-    console.log('===start sleep');
     await sleep(TIMEOUT);
-    console.log('===finish sleep');
     const sortedNews = sortNews(news, sortType);
     return getNewsPage(sortedNews, pageNumber, limit);
 };

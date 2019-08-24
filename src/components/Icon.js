@@ -17,3 +17,13 @@ export const IconLogo = ({className}) => {
                  className={className}
                  style={{width: '100px', height: '100px'}}/>;
 };
+
+export const IconPreloader = () =>
+    <div className="box">
+        <div className="cat">
+            <div className="cat__body"></div>
+            <div className="cat__body"></div>
+            <div className="cat__tail"></div>
+            <div className="cat__head"></div>
+        </div>
+    </div>;

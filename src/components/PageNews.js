@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
-import {IconLogo} from "./Icon";
 import {FragmentNews} from "./FragmentNews";
-import {news} from "../data/news";
-import Pagination from "./Pagination";
 import {Header} from "./Header";
 import {SORT_BY, STANDART_PAGE_SIZE, STANDART_START_PAGE} from "../constants";
 import {getNews} from "../news-service";
 import {calcPageCount} from "../utils";
+import {IconPreloader} from "./Icon";
 
 class PageNews extends Component {
     constructor(props) {
@@ -34,7 +32,7 @@ class PageNews extends Component {
 
     render() {
         const {data, sortBy, isLoading} = this.state;
-        return isLoading ? 'isLoading' : (
+        return (
             <div>
                 <Header handleChange={this._handleChange}
                         sortBy={sortBy}/>
@@ -46,7 +44,7 @@ class PageNews extends Component {
                         {this._createControls()}
                     </div>
                 </div>
-
+                {isLoading ? <IconPreloader/> : null}
             </div>
         );
     }

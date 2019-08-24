@@ -1,4 +1,4 @@
-export const list = [
+export const news = [
     {
         "id": "1",
         "title": "Occaecat pariatur amet aute laborum tempor nostrud.",
@@ -89,4 +89,4 @@ export const list = [
         "img": "https://placekitten.com/300/300",
         "link": "https://google.com"
     }
-]
+];

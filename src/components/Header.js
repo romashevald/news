@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-import {list} from "../data/list";
+import {news} from "../data/news";
 import {SORT_BY} from "../constants";
 
 export const Header = ({handleChange, sortBy}) => {
@@ -12,7 +12,7 @@ export const Header = ({handleChange, sortBy}) => {
                 <select onChange={handleChange}
                         name='sortBy'
                         value={sortBy}>
-                    <option value={SORT_BY.ALPH}>{SORT_BY.ALPH}</option>
+                    <option value={SORT_BY.LEXICAL}>{SORT_BY.LEXICAL}</option>
                     <option value={SORT_BY.DATE}>{SORT_BY.DATE}</option>
                 </select>
             </div>

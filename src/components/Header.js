@@ -1,6 +1,6 @@
 'use strict';
 
-import React, {Component, useState,useEffect} from 'react';
+import React, { useState,useEffect} from 'react';
 import {pFuncRequired, pStringRequired, SORT_BY} from "../constants";
 
 export const Header = ({sortBy,handleChange}) => {

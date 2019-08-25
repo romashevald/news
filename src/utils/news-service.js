@@ -1,3 +1,5 @@
+'use strict';
+
 import {news} from "../data/news";
 import {SORT_BY, STANDART_PAGE_SIZE, STANDART_START_PAGE, TIMEOUT} from "../constants/index";
 import {timestampToData} from "./index";

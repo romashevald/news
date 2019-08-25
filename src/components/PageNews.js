@@ -3,7 +3,7 @@
 import React, {Component} from 'react';
 import {FragmentsNews} from "./FragmentsNews";
 import {Header} from "./Header";
-import {SORT_BY, STANDART_PAGE_SIZE, STANDART_START_PAGE} from "../constants";
+import {SORT_BY, STANDART_START_PAGE} from "../constants";
 import {getNews} from "../utils/news-service";
 import {IconPreloader} from "./Icons";
 import {Pagination} from "./Pagination";
@@ -36,7 +36,8 @@ class PageNews extends Component {
         const {data, sortBy, isLoading} = this.state;
         return data.length === 0 ? <IconPreloader/> : (
             <div className='page-news' style={{position: 'relative'}}>
-                <Header sortBy={sortBy} handleChange={this._handleChange}/>
+                <Header sortBy={sortBy}
+                        handleChange={this._handleChange}/>
                 <div className='body'>
                     <section className='content'>
                         <FragmentsNews data={data}/>

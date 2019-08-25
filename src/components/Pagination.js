@@ -30,6 +30,7 @@ Pagination.propTypes = {
     currentPageNumber: pNumberRequired,
     sortBy: pStringRequired
 };
+
 Pagination.defaultProps = {
     currentPageNumber: STANDART_START_PAGE,
     sortBy: SORT_BY.LEXICAL

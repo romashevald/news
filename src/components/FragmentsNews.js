@@ -1,6 +1,9 @@
+'use strict';
+
 import React from 'react';
 import {IconCalendar, IconViews} from "./Icons";
 import {timestampToData} from "../utils";
+import {pArrayRequired} from "../constants";
 
 export const FragmentsNews = ({data}) => {
     return (
@@ -31,4 +34,8 @@ export const FragmentsNews = ({data}) => {
             })}
         </div>
     );
+};
+
+FragmentsNews.propTypes = {
+    data: pArrayRequired
 };

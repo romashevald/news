@@ -1,3 +1,5 @@
+'use strict';
+
 import {news} from "../data/news";
 import {STANDART_PAGE_SIZE} from "../constants";
 

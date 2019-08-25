@@ -7,7 +7,7 @@ export const SORT_BY = {
     DATE: 'Date'
 };
 
-export const STANDART_PAGE_SIZE = 3;
+export const STANDARD_PAGE_SIZE = 3;
 export const STANDARD_START_PAGE = 1;
 
 export const TIMEOUT = 1000;

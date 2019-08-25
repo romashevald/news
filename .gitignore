@@ -1,6 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 .idea
+news1.iml
 
 # dependencies
 /node_modules

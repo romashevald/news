@@ -5,7 +5,10 @@ const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin');
 const baseDir = __dirname;
 const srcDir = path.resolve(baseDir, 'src');
 module.exports = {
-    entry: "./src/index.js",
+    entry: [
+        "@babel/polyfill",
+        "./src/index.js"
+    ],
     output: {
         path: path.join(__dirname, "/dist"),
         filename: "index_bundle.js"

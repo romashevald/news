@@ -2,7 +2,6 @@
 
 import React from 'react';
 import {pNumberRequired, pStringRequired, SORT_BY, STANDARD_START_PAGE} from "../constants";
-import {calcPageCount} from "../utils";
 import {getAvailablePages} from "../utils/news-service";
 
 export const Pagination = ({obtainNewsPage, currentPageNumber, sortBy}) => {

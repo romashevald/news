@@ -1,17 +1,16 @@
 'use strict';
 
 import {news} from "../data/news";
-import {SORT_BY, STANDART_PAGE_SIZE, STANDARD_START_PAGE, TIMEOUT} from "../constants/index";
-import {timestampToData} from "./index";
+import {SORT_BY, STANDARD_PAGE_SIZE, STANDARD_START_PAGE, TIMEOUT} from "../constants/index";
 
-export const getNews = async (pageNumber = STANDARD_START_PAGE
-    , sortType = SORT_BY.LEXICAL, limit = STANDART_PAGE_SIZE) => {
+export const getNews = async (pageNumber = STANDARD_START_PAGE,
+                              sortType = SORT_BY.LEXICAL, limit = STANDARD_PAGE_SIZE) => {
     await sleep(TIMEOUT);
     const sortedNews = sortNews(news, sortType);
     return getNewsPage(sortedNews, pageNumber, limit);
 };
 
-export const getAvailablePages = (pageSize = STANDART_PAGE_SIZE) => {
+export const getAvailablePages = (pageSize = STANDARD_PAGE_SIZE) => {
     return Math.ceil(news.length / pageSize);
 };
 
@@ -30,9 +29,9 @@ const getNewsPage = (news, pageNumber, limit) => {
     if (pageNumber < 1) {
         throw 'Cannot get page less than 1';
     }
-    // if (pageNumber * limit > news.length) {
-    //     throw 'Page number is too big';
-    // }
+    if (pageNumber > Math.ceil(news.length / limit)) {
+        throw 'Page number is too big';
+    }
     return news.slice(((pageNumber - 1) * limit), pageNumber * limit);
 };
 

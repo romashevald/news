@@ -59,9 +59,9 @@ class PageNews extends Component {
         try {
             const news = await getNews(currentPageNumber, sortBy);
             this.setState({
-                data: news
-                , currentPageNumber
-                , isLoading: false
+                data: news,
+                currentPageNumber,
+                isLoading: false
             });
         } catch (e) {
             console.error(e);

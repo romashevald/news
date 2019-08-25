@@ -2,8 +2,9 @@
 
 import React from 'react';
 import {IconCalendar, IconViews} from "./Icons";
-import {timestampToData} from "../utils";
 import {pArrayRequired} from "../constants";
+
+const timestampToDate = ts => new Date(+ts).toLocaleDateString();
 
 export const NewsFragment = ({data}) => {
     return (
@@ -20,7 +21,7 @@ export const NewsFragment = ({data}) => {
                             <div className='date-views'>
                                 <div className='date'>
                                     <IconCalendar className='icon-calendar'/>
-                                    {timestampToData(date)}
+                                    {timestampToDate(date)}
                                 </div>
                                 <div className='views'><IconViews className='icon-views'/>{views}</div>
                             </div>

@@ -1,17 +1,17 @@
 'use strict';
 
 import {news} from "../data/news";
-import {SORT_BY, STANDART_PAGE_SIZE, STANDART_START_PAGE, TIMEOUT} from "../constants/index";
+import {SORT_BY, STANDART_PAGE_SIZE, STANDARD_START_PAGE, TIMEOUT} from "../constants/index";
 import {timestampToData} from "./index";
 
-export const getNews = async (pageNumber = STANDART_START_PAGE
+export const getNews = async (pageNumber = STANDARD_START_PAGE
     , sortType = SORT_BY.LEXICAL, limit = STANDART_PAGE_SIZE) => {
     await sleep(TIMEOUT);
     const sortedNews = sortNews(news, sortType);
     return getNewsPage(sortedNews, pageNumber, limit);
 };
 
-export const getAvailablePages = (pageSize) => {
+export const getAvailablePages = (pageSize = STANDART_PAGE_SIZE) => {
     return Math.ceil(news.length / pageSize);
 };
 

@@ -5,7 +5,7 @@ import {IconCalendar, IconViews} from "./Icons";
 import {timestampToData} from "../utils";
 import {pArrayRequired} from "../constants";
 
-export const FragmentsNews = ({data}) => {
+export const NewsFragment = ({data}) => {
     return (
         <div className='all-news'>
             {data.map((item, i) => {
@@ -36,6 +36,6 @@ export const FragmentsNews = ({data}) => {
     );
 };
 
-FragmentsNews.propTypes = {
+NewsFragment.propTypes = {
     data: pArrayRequired
 };

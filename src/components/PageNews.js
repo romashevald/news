@@ -1,9 +1,9 @@
 'use strict';
 
 import React, {Component} from 'react';
-import {FragmentsNews} from "./FragmentsNews";
+import {NewsFragment} from "./NewsFragment";
 import {Header} from "./Header";
-import {SORT_BY, STANDART_START_PAGE} from "../constants";
+import {SORT_BY, STANDARD_START_PAGE} from "../constants";
 import {getNews} from "../utils/news-service";
 import {IconPreloader} from "./Icons";
 import {Pagination} from "./Pagination";
@@ -13,7 +13,7 @@ class PageNews extends Component {
         super(props);
         this.state = {
             data: [],
-            currentPageNumber: STANDART_START_PAGE,
+            currentPageNumber: STANDARD_START_PAGE,
             sortBy: SORT_BY.LEXICAL,
             isLoading: false
         };
@@ -28,7 +28,7 @@ class PageNews extends Component {
     componentDidUpdate(prevProps, prevState) {
         const {sortBy} = this.state;
         if (prevState.sortBy !== sortBy) {
-            this._obtainNewsPage(STANDART_START_PAGE, sortBy);
+            this._obtainNewsPage(STANDARD_START_PAGE, sortBy);
         }
     }
 
@@ -40,7 +40,7 @@ class PageNews extends Component {
                         handleChange={this._handleChange}/>
                 <div className='body'>
                     <section className='content'>
-                        <FragmentsNews data={data}/>
+                        <NewsFragment data={data}/>
                         <Pagination {...this.state}
                                     obtainNewsPage={this._obtainNewsPage}/>
                     </section>
@@ -52,7 +52,7 @@ class PageNews extends Component {
         );
     }
 
-    async _obtainNewsPage(currentPageNumber = STANDART_START_PAGE, sortBy = SORT_BY.LEXICAL) {
+    async _obtainNewsPage(currentPageNumber = STANDARD_START_PAGE, sortBy = SORT_BY.LEXICAL) {
         this.setState({
             isLoading: true
         });

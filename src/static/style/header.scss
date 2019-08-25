@@ -9,21 +9,31 @@ select {
   appearance: none;
 }
 
-
 select::-ms-expand {
   display: none;
 }
 
-@media screen and (min-width: 0 \0) {
+@media screen and (min-width: 0 \0
+) {
   select {
-    background: none \9;
-    padding: 5px \9;
+    background: none \9
+  ;
+    padding: 5px \9
+  ;
   }
 }
 
 .page-header {
   display: flex;
   justify-content: space-around;
+}
+
+@media screen and (max-width: 900px) {
+  .page-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .title-news {

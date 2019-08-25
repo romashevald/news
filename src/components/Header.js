@@ -7,8 +7,7 @@ export const Header = ({sortBy,handleChange}) => {
     const [sort, setSortBy] = useState(sortBy);
     useEffect(() => handleChange(sort),[sort]);
     return (
-        <header>
-            <div className='page-header'>
+        <header className='page-header'>
                 <div className='title-news'><h3>News</h3></div>
                 <div>
                     <select onChange={e => setSortBy(e.target.value)}
@@ -18,7 +17,6 @@ export const Header = ({sortBy,handleChange}) => {
                         <option value={SORT_BY.DATE}>{SORT_BY.DATE}</option>
                     </select>
                 </div>
-            </div>
         </header>
     );
 };

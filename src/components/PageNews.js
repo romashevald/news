@@ -71,6 +71,6 @@ class PageNews extends Component {
     _handleChange(value) {
         this.setState({sortBy: value});
     };
-};
+}
 
 export default PageNews;

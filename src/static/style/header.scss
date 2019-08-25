@@ -2,11 +2,23 @@
 
 select {
   width: 15rem;
-  padding: 5px 35px 5px 5px;
   font-size: 2vh;
   border: 1px solid #ccc;
   height: 2rem;
   appearance: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0 -50% 0 0;
+  transform: translate(-50%, -50%)
+}
+
+h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0 -50% 0 0;
+  transform: translate(-50%, -50%)
 }
 
 select::-ms-expand {
@@ -38,4 +50,14 @@ select::-ms-expand {
 
 .title-news {
   color: $black;
+}
+
+.container-select {
+  height: inherit;
+  position: relative
+}
+
+.title-news {
+  height: inherit;
+  position: relative
 }

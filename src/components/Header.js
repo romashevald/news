@@ -9,7 +9,7 @@ export const Header = ({sortBy,handleChange}) => {
     return (
         <header className='page-header'>
                 <div className='title-news'><h3>News</h3></div>
-                <div>
+                <div className='container-select'>
                     <select onChange={e => setSortBy(e.target.value)}
                             name='sort'
                             value={sort}>

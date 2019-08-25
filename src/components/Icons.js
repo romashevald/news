@@ -11,22 +11,13 @@ const Icons = ({symbol, className, style}) => (
     </svg>
 );
 
-export const IconCalendar = ({className}) => <Icons symbol="calendar"
-                                                    className={className}/>;
+export const IconCalendar = ({className}) =>
+    <Icons symbol="calendar"
+           className={className}/>;
 
-export const IconViews = ({className}) => <Icons symbol="eye"
-                                                 className={className}/>;
-
-
-export const IconPreloaderCat = () =>
-    <div className="box">
-        <div className="cat">
-            <div className="cat__body"/>
-            <div className="cat__body"/>
-            <div className="cat__tail"/>
-            <div className="cat__head"/>
-        </div>
-    </div>;
+export const IconViews = ({className}) =>
+    <Icons symbol="eye"
+           className={className}/>;
 
 export const IconPreloader = () =>
     <div className='lds'>
@@ -40,4 +31,4 @@ export const IconPreloader = () =>
             <div/>
             <div/>
         </div>
-    </div>
+    </div>;

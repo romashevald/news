@@ -4,7 +4,7 @@ import {Header} from "./Header";
 import {SORT_BY, STANDART_PAGE_SIZE, STANDART_START_PAGE} from "../constants";
 import {getNews} from "../utils/news-service";
 import {calcPageCount} from "../utils";
-import {IconPreloader} from "./Icon";
+import {IconPreloader, IconPreloaderCat} from "./Icons";
 
 class PageNews extends Component {
     constructor(props) {
@@ -50,12 +50,9 @@ class PageNews extends Component {
                 <div className="sidebar-1 sidebar"/>
                 <div className="sidebar-2 sidebar"/>
             </div>
-
-            {/*{isLoading ? <IconPreloader/> : null}*/}
-            <div>
-
-            </div>
-            <IconPreloader />
+            {isLoading ? <IconPreloader/> : null}
+            {/*just for fun*/}
+            {/*<IconPreloaderCat />*/}
             </body>
         );
     }

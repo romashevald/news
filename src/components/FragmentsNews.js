@@ -1,5 +1,5 @@
 import React from 'react';
-import {IconCalendar, IconViews} from "./Icon";
+import {IconCalendar, IconViews} from "./Icons";
 import {timestampToData} from "../utils";
 
 export const FragmentsNews = ({data}) => {

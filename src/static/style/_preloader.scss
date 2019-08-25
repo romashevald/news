@@ -1,18 +1,4 @@
-@mixin fill-full($dir: 'full', $type: absolute) {
-  position: $type;
-  @if $dir != 'bottom' {
-    top: 0;
-  }
-  @if $dir != 'right' {
-    left: 0;
-  }
-  @if $dir != 'left' {
-    right: 0;
-  }
-  @if $dir != 'top' {
-    bottom: 0;
-  }
-}
+@import "mixins";
 
 .cat {
   position: relative;
@@ -121,7 +107,6 @@
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 

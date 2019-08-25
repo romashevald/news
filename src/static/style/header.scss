@@ -6,15 +6,20 @@ select {
   border: 1px solid #ccc;
   height: 2rem;
   appearance: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: 0 -50% 0 0;
-  transform: translate(-50%, -50%)
+  border-radius: 0.3rem;
+
+  &:active{
+    border-radius: 0.3rem;
+  }
 }
+
 
 select::-ms-expand {
   display: none;
+}
+
+.title-news {
+  color: $black;
 }
 
 @media screen and (min-width: 0 \0
@@ -29,7 +34,7 @@ select::-ms-expand {
 
 .page-header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 900px) {
@@ -37,15 +42,8 @@ select::-ms-expand {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 1vh;
   }
 }
 
-.title-news {
-  color: $black;
-}
-
-.container-select {
-  height: inherit;
-  position: relative
-}
 

@@ -21,7 +21,7 @@ export const NewsFragment = ({data}) => {
                             <div className='date-views'>
                                 <div className='date'>
                                     <IconCalendar className='icon-calendar'/>
-                                    {timestampToDate(date)}
+                                    <div>{timestampToDate(date)}</div>
                                 </div>
                                 <div className='views'><IconViews className='icon-views'/>{views}</div>
                             </div>

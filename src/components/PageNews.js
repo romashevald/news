@@ -36,10 +36,10 @@ class PageNews extends Component {
         const {data, sortBy, isLoading} = this.state;
         return data.length === 0 ? <IconPreloader/> : (
             <div className='page-news' style={{position: 'relative'}}>
-                <Header sortBy={sortBy}
-                        handleChange={this._handleChange}/>
                 <div className='body'>
                     <section className='content'>
+                        <Header sortBy={sortBy}
+                                handleChange={this._handleChange}/>
                         <NewsFragment data={data}/>
                         <Pagination {...this.state}
                                     obtainNewsPage={this._obtainNewsPage}/>

@@ -1,12 +1,12 @@
 @import "variables";
 
-.page-news header,
+.page-news,
 .sidebar,
 .content {
   padding: 1rem;
 }
 
-.page-news header {
+.page-news {
   background: none;
 }
 
@@ -43,6 +43,8 @@
   .sidebar {
     flex: 0 0 200px;
   }
+
+
 }
 
 

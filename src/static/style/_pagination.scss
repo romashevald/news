@@ -9,7 +9,14 @@
   cursor: default;
   margin: 0 0.25em;
   padding: 0.5em 0.75em;
+  border-radius: 0.3rem;
 
+  &:hover{
+    background: lighten($cyan, 50%);
+    border-radius: 0.3rem;
+    color: $gray-lightest;
+
+  }
   &:first-child {
     margin-left: 0;
   }
@@ -27,7 +34,6 @@
 .pagination-controls-button--active {
   color: $cyan;
   border: 1px solid $cyan;
-border-radius: 0.3rem;
   &:hover,
   &:hover:not(:active) {
     transform: none;
